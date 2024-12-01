@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pagina</title>
+</head>
+<body>
+    <h1>Lista de frutas</h1>
+    <table id="tabela" border="1">
+        <thead>
+            <tr>
+                <th>Fruta</th>
+                <th>Cor</th>
+                <th>Quantidade</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+
+    </table>
+
+    <script>
+        var matriz = [
+            ["Laranja", "laranja", 19],
+            ["Uva", "roxo", 37],
+            ["Pera", "verde", 2],
+            ["Abacaxi", "amarelo", 55],
+            ["Maçã", "vermelho", 43]
+        ];
+
+        let tabela = document.getElementById('tabela').getElementsByTagName('tbody')[0];
+
+        for(let lin=0 ; lin < matriz.length; lin++){
+            let linha = document.createElement('tr');
+
+            for(let col=0; col < matriz[lin].length ; col++){
+                let coluna = document.createElement('td');
+                coluna.textContent = matriz[lin][col];
+                linha.appendChild(coluna);
+            }
+            tabela.appendChild(linha);
+        }
+    </script>
+</body>
+</html>

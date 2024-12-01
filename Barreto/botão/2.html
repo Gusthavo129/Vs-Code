@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function function1(){
+            msg = 'on' + event.type + 'Evento Disparado pelo id ='
+                                    + '"'+ event.srcElement.id + '"';
+            alert(msg)
+        }
+    </script>
+</head>
+<body id="Body01" onkeypress="function1()">
+<p>Presione qualquer tecla para acionar o evento</p>
+
+</body>
+</html>

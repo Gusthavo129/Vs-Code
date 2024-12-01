@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 6</title>
+</head>
+<body>
+    <script>
+    function gerar() {
+    let possibilidades = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    let final = ' ';
+
+    final = possibilidades.charAt(Math.floor(Math.random() * possibilidades.length));
+    for (let a = 1; a < 4; a++) {
+        let outro;
+        do {
+            outro = possibilidades.charAt(Math.floor(Math.random() * possibilidades.length));
+        } 
+        while (outro === final.charAt(a - 1));
+        final += outro;
+    }
+     return final;
+}
+    for (let b = 1; b <= 3; b++) {
+        alert(gerar())
+}
+    </script>
+</body>
+</html>

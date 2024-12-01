@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Calculadora</h1>
+    
+    <input type="number" id="A"  >
+    <input type="number" id="B"  >
+    <br>
+    <button onclick="calculadora.somar()">Somar</button>
+    <button onclick="calculadora.subtrair()">Subitrair</button>
+    <p>Resultado: <span id="resultado">0</span></p>
+
+    <script>
+const calculadora = {
+    somar: function() {
+        const A = Number(document.getElementById("A").value);
+        const B = Number(document.getElementById("B").value);
+        
+        if (isNaN(A) || isNaN(B)) {
+            alert("Insira números válidos");
+            return;
+        }
+
+        const resultado = A + B;
+        document.getElementById("resultado").innerText = resultado;
+    },
+    subtrair: function() {
+        const A = Number(document.getElementById("A").value);
+        const B = Number(document.getElementById("B").value);
+        
+        if (isNaN(A) || isNaN(B)) {
+            alert("Insira números válidos");
+            return;
+        }
+
+        const resultado = A - B;
+        document.getElementById("resultado").innerText = resultado;
+    }
+
+}
+    </script>
+</body>
+</html>

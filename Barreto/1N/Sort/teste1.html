@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gessica</title>
+</head>
+<body>
+    <script>
+    function pigeonholeSort(arr) {
+        if (arr.length === 0) return;
+      
+        // Etapa 1: Encontre os valores mínimo e máximo
+        let min = arr[0];
+        let max = arr[0];
+        for (let num of arr) {
+          if (num < min) {
+            min = num;
+          } else if (num > max) {
+            max = num;
+          }
+        }
+      
+        // Etapa 2: Calcule o intervalo e crie os compartimentos
+        const range = max - min + 1;
+        const pigeonholes = Array.from({ length: range }, () => []);
+      
+        // Etapa 3: Coloque os elementos nos compartimentos correspondentes
+        for (let num of arr) {
+          pigeonholes[num - min].push(num);
+        }
+      
+        // Etapa 4: Colete elementos dos compartimentos e coloque-os de volta no array original
+        let index = 0;
+        for (let hole of pigeonholes) {
+          for (let num of hole) {
+            arr[index++] = num;
+          }
+        }
+      }
+      
+      // Exemplo de uso
+      const arr = [8, 3, -1, 8, 4, 6, 8, 3, -4, 5];
+      console.log("Array original:", arr);
+      
+      pigeonholeSort(arr);
+      
+      console.log("Array classificado:", arr);
+    </script>
+</body>
+</html>

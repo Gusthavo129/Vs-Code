@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 9</title>
+</head>
+<body>
+    <script>
+
+        let senha = prompt("Digite uma senha que contenha pelo menos uma letra maiúscula, uma minúscula, um número e um caractere especial(!,@,#):")
+        
+        function Validacao(senha){
+            
+            if (senha.length < 8) {
+                return false;
+            }
+            if (!/[A-Z]/.test(senha)) {
+                return false;
+            }
+            if (!/[a-z]/.test(senha)) {
+                return false;
+            }
+            if (!/[0-9]/.test(senha)) {
+                return false;
+            }
+            if (!/[!@#]/.test(senha)) {
+                return false;
+            }
+            for (let a = 0; a < senha.length -1;a++){
+            if(senha[a] === senha[a + 1]){
+                return false;
+            }
+        }
+        return true;  
+    }
+        if (Validacao(senha)) {
+            alert("A senha informada está correta ");
+    } 
+        else {
+            alert("A senha informada é incorreta");
+    }
+    
+
+    </script>
+</body>
+</html>

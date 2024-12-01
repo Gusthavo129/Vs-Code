@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function dizerTchau(){
+            alert("Voce acabou de tirar o cursor de cima do texto! Tchau!");
+        }
+    </script>
+</head>
+<body >
+    <h3>Escolha a cor do plano de fundo</h3>
+
+    <table border="1">
+        <tr>
+            <td bgcolor="#FFFFFF" onclick="document.body.style.backgroundColor = '#FFFFFF'">Branco</td>
+            <td bgcolor="#993333" onclick="document.body.style.backgroundColor = '#993333'">Vermelho</td>
+            <td bgcolor="#666699" onclick="document.body.style.backgroundColor = '#666699'">lilas</td>
+        </tr>
+        <tr>
+            <td bgcolor="#33CC99" onclick="document.body.style.backgroundColor = '#33CC99'">Ciano</td>
+            <td bgcolor="#00FF66" onclick="document.body.style.backgroundColor = '#00FF66'">Verde</td>
+            <td bgcolor="#CCFF00" onclick="document.body.style.backgroundColor = '#CCFF00'">Amarelo</td>
+        </tr>
+    </table>
+
+    <h3>Dê um clique duplo no paragrafo para alterar o texto </h3>
+    <p ondblclick="this.innerHTML = 'Você deu um duplo clique e o texto foi alterado!'">
+        Dê um duplo clique aqui para mudar este texto
+    </p>
+
+    <h3>Precione qualquer tecla e veja qul doi precionado</h3>
+
+    <input type="text" onkeydown="document.getElementById('saida').innerHTML = 'Tecla precionada ' + event.key">
+    <p id="saida">Tecla precionada: </p>
+
+    <table border="1" onmouseout="dizerTchau();">
+        <tr height="100">
+        <td><center>Posicione o cursor sobre este texto, e depois tire!</center>
+        </td>
+    </table>
+
+    <center>
+        <h3 onmouseup="alert('Você acabou de soltar o botao clicado!!!')">
+            Clique com os botoes direto e esquerdo do mouse para testar o evento
+    </h3></center>
+
+    <form action="" method="POST" id="Form01">
+        <input type="text" name="meutexto" onkeydown="CapturaValor()">
+    
+        <script>
+            s1 = new String(Form01.meutexto.value)
+    
+            function CapturaValor(){
+                s1 = "teclou a letra "
+                Form01.meutexto.value = s1.toUpperCase()
+            }
+        </script>
+    </form>
+
+</body>
+</html>

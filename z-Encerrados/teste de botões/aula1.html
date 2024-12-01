@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API</title>
+</head>
+<body>
+    <div id="retorno"></div>
+    <script>
+        let CEP=window.prompt('qual e o seu CEP?')
+        var url ="https://viacep.com.br/ws/"+CEP+"/json/";
+        var xhttp = new XMLHttpRequest();
+        xhttp.open("GET", url, false);
+        xhttp.send();
+        console.log(xhttp.responseText);
+        respostaJSON = JSON.parse(xhttp.responseText)
+        console.log(respostaJSON)
+        document.getElementById("retorno").innerHTML = respostaJSON.logradouro;
+        document.getElementById("retorno").innerHTML += respostaJSON.bairro;
+        document.getElementById("retorno").innerHTML += respostaJSON.localidade;
+        document.getElementById("retorno").innerHTML += respostaJSON.uf;
+    </script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background-color:black;
+    color:blueviolet;
+    padding: 20px;
+    text-align: center;
+}
+
+.container {
+    background-color:aqua;
+    color: yellowgreen;
+    padding: 20px;
+}
+
+footer {
+    background-color: white;
+    color: pink;
+    padding: 10px;
+    text-align: center;
+}

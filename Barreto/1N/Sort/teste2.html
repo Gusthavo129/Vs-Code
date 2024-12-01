@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giovana</title>
+</head>
+<body>
+    <script>
+const v = [8, 3, 2, 1, 4, -2, 8, 9, 1, 5];
+console.log("Array original:", v);
+
+// Supondo que max, min, size e v já foram definidos
+const max = Math.max(...v); // Calcula o máximo no array v
+const min = Math.min(...v); // Calcula o mínimo no array v
+const size = v.length;      // Tamanho do array v
+
+// Tamanho do pigeonhole
+const sizePG = (max - min) + 2;
+
+// Criar o pigeonhole
+const pigeonhole = Array.from({ length: sizePG - 1 }, () => Array(sizePG).fill(0));
+
+// Inicializar os valores no pigeonhole
+for (let i = 0; i < sizePG - 1; i++) {
+  for (let j = 0; j < sizePG; j++) {
+    pigeonhole[i][j] = 0;
+  }
+}
+
+// Colocar os elementos nos compartimentos do pigeonhole
+for (let i = 0; i < size; i++) {
+  const index = v[i] - min;
+  const currentSize = pigeonhole[index][0];
+  pigeonhole[index][currentSize + 1] = v[i]; // Adiciona o elemento ao compartimento
+  pigeonhole[index][0]++; // Incrementa o contador do compartimento
+}
+
+// Iterar sobre o pigeonhole e colocar os elementos de volta na lista original
+let k = 0;
+for (let i = 0; i < sizePG - 1; i++) {
+  if (pigeonhole[i][0] > 0) {
+    for (let j = 1; j <= pigeonhole[i][0]; j++) {
+      v[k++] = pigeonhole[i][j]; // Coloca os elementos de volta na lista
+    }
+  }
+}
+
+// Resultado
+console.log("Array classificado:", v);
+
+    </script>
+</body>
+</html>

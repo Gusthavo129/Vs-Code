@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 8</title>
+</head>
+<body>
+    <script>
+    function calcular(){
+        let Uno = Number(prompt("Coloque um numero:", ""))
+        let dos = Number(prompt("Coloque o numero equivalente a o primeiro:", ""))
+        let quatro = Number(prompt("Coloque o divisor do primeiro:", ""))
+
+        if (Uno === 0){
+            alert("O valor não pode ser 0");
+            return;
+        }
+        if (dos === 0){
+            alert("O valor não pode ser 0");
+            return;
+        }
+        if (quatro === 0){
+            alert("O valor não pode ser 0");
+            return;
+        }
+                
+        let tres = (dos * quatro) / Uno;
+
+
+        alert(`O valor da sua variavel é: ${tres}`);
+}
+    window.onload = calcular;
+    </script>
+</body>
+</html>

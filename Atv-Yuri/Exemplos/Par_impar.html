@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 2</title>
+</head>
+<body>
+    <script>
+        let qtdPar = 0
+        let qtdImpar = 0
+        for (let numero = 1; numero < 20; numero ++) {
+            if ((numero % 2) == 0) {
+                qtdPar++
+                continue
+            }
+            qtdImpar++
+        }
+        console.log(`Qtd. Par: ${qtdPar}`)
+        console.log(`Qtd. Impar: ${qtdImpar}`)
+        alert("Quantidade: " +qtdPar+ ` Par ` +qtdImpar+ ` impar`)
+    </script>
+    <!--
+    D)Qtd. Par 9 e Qtd. Impar 10
+    Explicação: Porque contamos os números de 0 a 19 mais como 0 é neutro temos que existem 9 números pares e 10 números pares.    
+    -->
+</body>
+</html>

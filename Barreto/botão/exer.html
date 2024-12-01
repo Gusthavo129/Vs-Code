@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body> 
+    <h1>média</h1>
+    <input type="text" id="A"  ><br> 
+    <button onclick="calcularmedia()">Calcular</button>
+    <p id="resultadomedia">Media: </p>
+
+
+    <script>
+        function calcularmedia() {
+            let numerostring = document.getElementById('A').value;
+            let numerosArray = numerostring.split(',');
+
+            let soma = 0;
+            for (let i = 0;i < numerosArray.length;i++){
+                soma += parseFloat(numerosArray[i]);
+            }
+            let media = soma / numerosArray.length;
+            document.getElementById('resultadomedia').textContent = `A media é: ${media.toFixed(2)}`;
+        }
+    </script>
+</body>
+</html>

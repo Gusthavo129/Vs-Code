@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>nomes</title>
+</head>
+<body>
+    <h1>Localizador de Nomes</h1>
+    <input type="text" id="nomes"><br>
+    <input type="text" id="solicitação"><br>
+    <button onclick="procurar()">Procurar</button>
+    <p id="Tem">Resultado: </p>
+
+    <script>
+        function procurar(){
+            let informacoes = document.getElementById('nomes').value;
+            let espaco = informacoes.split(',');
+            let solicitacao = document.getElementById('solicitação').value.trim();
+            let encontrado = false;
+
+            for(let a =0; a < espaco.length; a++){
+                if(espaco[a] === solicitacao){
+                    encontrado = true   
+                }
+            }
+            if (encontrado){
+                document.getElementById('Tem').textContent = `O nome ${solicitacao} tem na lista.` 
+            } else{
+                document.getElementById('Tem').textContent = `O nome ${solicitacao} nao tem na lista`
+            }
+            
+        }
+    </script>
+</body>
+</html>

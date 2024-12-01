@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 7</title>
+</head>
+<body>
+    <script>
+    function bhaskara() {
+    let a = Number(prompt("Coloque a variavel A:", ""))
+    let b = Number(prompt("Coloque a variavel B:", ""))
+    let c = Number(prompt("Coloque a variavel C:", ""))
+    
+    let D = (b**2 -(4 * a * c) )
+    let x1 = (-b - Math.sqrt(D))/ (2 *a);
+    let x2 = (-b + Math.sqrt(D))/(2*a);
+
+    alert(`O seu Delta é: ${D}`)
+    alert(`O seu X1 é: ${x1}`)
+    alert(`O seu X2 é: ${x2}`)
+    }
+    window.onload = bhaskara;
+    </script>  
+</body>
+</html>

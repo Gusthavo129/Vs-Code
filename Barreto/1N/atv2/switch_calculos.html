@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let resultado
+
+        let a = Number(prompt("Escolha um numero:"))
+        let b = Number(prompt("Escolha outro numero:"))
+        let operaçao = prompt("Escolha uma Operação matematica(+ ,- ,* ,/):")
+
+        switch (operaçao){
+        
+            case "+":
+            resultado = a + b
+            alert(`A somo dos numeros ${a} + ${b} é: ${resultado}`)
+            break
+
+            case "-":
+            resultado = a - b
+            alert(`A subtrasão dos numeros ${a} - ${b} é: ${resultado}`)
+            break
+
+            case "*":
+            resultado = a * b
+            alert(`A multiplicasão dos numeros ${a} * ${b} é: ${resultado}`)
+            break
+
+            case "/":
+            resultado = a / b
+            alert(`A divisão dos numeros ${a} / ${b} é: ${resultado}`)
+            break
+
+            default: 
+            alert("Operaçao invalida")
+
+        }
+
+
+    
+    </script>
+</body>
+</html>

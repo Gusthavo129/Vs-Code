@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>numeros</title>
+</head>
+<body>
+    <h1>Contador de numeros</h1>
+    <input type="text" id="Numeros"><br>
+    <input type="text" id="Vetor"><br>
+    <button onclick="contador()">Contar</button>
+    <p id="ResultadoContador">Resultado: </p>
+
+    <script>
+        function contador() {
+            let algarismos = document.getElementById('Numeros').value;
+            let espaco = algarismos.split(',');
+            let algoritimo = document.getElementById('Vetor').value.trim();
+            let contagem = 0
+
+            for (let a = 0;a < espaco.length; a++){
+                if (espaco[a].trim() === algoritimo){
+                contagem++
+                }
+            }
+            document.getElementById('ResultadoContador').textContent = `O numero ${algoritimo} aparece ${contagem} vezes`
+        }
+    </script>
+</body>
+</html>

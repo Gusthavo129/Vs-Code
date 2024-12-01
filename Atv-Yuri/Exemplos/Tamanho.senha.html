@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 3</title>
+</head>
+<body>
+    <script>
+        const senha = ''
+        if (senha.length === 0) {
+            console.log('Senha em branco')
+            alert("1")
+        }
+        if (senha.length < 4) {
+            console.log('senha muito curta')
+            alert("2")
+        }
+        if (senha.length > 12) {
+            console.log('Senha muito longa')
+            alert("3")
+        }
+        else {
+            console.log('Senha OK')
+            alert("4")
+        }
+    </script>
+    <!--
+    B) "Senha em branco", "Senha muito curto" e "senha OK".
+    Explicação: Como você não declara nenhuma senha na constante ela entre nessas três partes, porque está vazia e menor que 4 e está ok.    -->
+</body>
+</html>

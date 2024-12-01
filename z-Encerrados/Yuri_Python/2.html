@@ -1,0 +1,43 @@
+import random
+itens = ('Pedra', 'Papel', 'Tesoura')
+computador = random.randint(0,2)
+print('+='* 10)
+print('''Suas opções:
+[0]Pedra
+[1]Papel
+[2]Tesoura''')
+jogador = int(input('Qual sua jogada?  '))
+print('+='* 10)
+print('Computador jogou {}'.format(itens[computador]))
+print('Jogador jogou {}'.format(itens[jogador]))
+print('+='* 10)
+
+if computador == 0:
+    if jogador == 0:
+        print("Ocorreu um empate tecnico")
+    elif jogador == 1:
+        print("O jogador ganhou na sorte")
+    elif jogador == 2:
+        print("Perdeu Play Boy")
+    else:
+        print("Operação invalida")
+if computador == 1:
+    if jogador == 0:
+        print("Perdeu Play Boy")
+    elif jogador == 1:
+        print("Ocorreu um empate tecnico")
+    elif jogador == 2:
+        print("O jogador ganhou na sorte")
+    else:
+        print("Operação invalida")
+if computador == 2:
+    if jogador == 0:
+        print("O jogador ganhou na sorte")
+    elif jogador == 1:
+        print("Perdeu Play Boy")
+    elif jogador == 2:
+        print("Ocorreu um empate tecnico")
+    else:
+        print("Operação invalida")
+        
+        

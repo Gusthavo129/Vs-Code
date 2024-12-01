@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividades N1- atv 2</title>
+    
+</head>
+<body>
+    <div id="rex"></div>
+    <script>
+        var sla = document.getElementById("rex")
+        var a=0
+        var b=0
+        num1 = prompt("Digite uma idade","")
+        num2 = prompt("Digite uma idade","")
+        num3 = prompt("Digite uma idade","")
+        if (num1 <= 17){
+            alert ("menor de idade")
+            a++
+        }
+        else{
+            alert("maior de idade");
+            b++
+        }
+        if (num2 <= 17){
+            alert ("Menor de idade")
+            a++
+        }
+        else{
+            alert("maior de idade");
+            b++
+        }
+        if (num3 <= 17){
+            alert ("Menor de idade")
+            a++
+        }
+        else{
+            alert("maior de idade");
+            b++
+        }
+         
+        sla.innerHTML +=`Temos ${a} que são menores de idade ` 
+        sla.innerHTML +=` Temos ${b} que são maiores de idade`
+
+    </script>
+</body>
+</html>

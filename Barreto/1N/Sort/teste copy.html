@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gusthavo</title>
+</head>
+<body>
+    <script>
+        // Função para executar o Pigeonhole Sort
+        function pigeonholeSort(arr) {
+            const n = arr.length;
+            let min = arr[0];
+            let max = arr[0];
+
+            // Encontrar os valores mínimo e máximo
+            for (let a = 0; a < n; a++) {
+                if (arr[a] > max) max = arr[a];
+                if (arr[a] < min) min = arr[a];
+            }
+
+            const range = max - min + 1;
+            const phole = Array(range).fill(0); // Inicializa os compartimentos
+
+            // Distribuir os elementos nos compartimentos
+            for (let i = 0; i < n; i++) {
+                phole[arr[i] - min]++;
+            }
+
+            // Coletar os elementos dos compartimentos e ordenar o array
+            let index = 0;
+            for (let j = 0; j < range; j++) {
+                while (phole[j] > 0) {
+                    arr[index++] = j + min;
+                    phole[j]--;
+                }
+            }
+        }
+
+        // Código principal
+        const arr = [-9, 3, -2, 7, 7, 6, 9, -1, 5];
+        console.log("Array original:", arr);
+        pigeonholeSort(arr);
+
+        // Exibindo o resultado no navegador
+        console.log(`Array classificado: ${arr.join(", ")}`);
+
+    </script>
+</body>
+</html>

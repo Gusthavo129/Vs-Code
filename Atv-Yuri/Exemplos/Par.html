@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 10</title>
+</head>
+<body>
+    <script>
+        let A = Number(prompt("Escolha um numero para ser o seu minimo: "))
+        let B = Number(prompt("Escolha um numero para ser o seu maximo: ")) 
+        let tipo = prompt("Escolha entre par e impar: ")
+
+        function algoritimo() {
+
+        if( A > B){
+            alert("O primeiro numero tem que ser menor que o segundo");
+            return;
+        }
+
+        const aleatorio = Math.floor(Math.random() * (B - A + 1)) + A;
+
+        let final;
+        if (tipo === 'par') {
+            final = aleatorio % 2 === 0 ? aleatorio : aleatorio + 1;
+            alert(`O numero par escolido é: ${final}`);
+            return
+        }
+        else {
+            final = aleatorio % 2 !== 0 ? aleatorio : aleatorio + 1;
+            alert(`O numero impar escolido é: ${final}`);
+            return
+        }
+    }
+    algoritimo();
+    </script>
+</body>
+</html>

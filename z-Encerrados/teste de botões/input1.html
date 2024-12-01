@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>input</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="input.css">
+</head>
+
+<body>
+    <div class="corpo">
+    <h1> Digite seu CEP no espaço a baixo</h1>
+    <input type="text" id="cep" value="78559900"/>
+    <button onclick="buscaCEP()">clique para buscar</button>
+    <div id="retorno"></div>
+    <script>
+        function buscaCEP(){
+            var cep = document.getElementById("cep").value;
+            var url = "https://viacep.com.br/ws/"+cep+"/json/";
+            var xhttp = new XMLHttpRequest();
+            xhttp.open("GET", url, false);
+            xhttp.send();
+            respostaJSON  = JSON.parse(xhttp.responseText);
+            console.log(respostaJSON);
+            document.getElementById("retorno").innerHTML ="<p>"+respostaJSON.logradouro;
+            document.getElementById("retorno").innerHTML +="<p>"+ respostaJSON.bairro;
+            document.getElementById("retorno").innerHTML +="<p>"+ respostaJSON.localidade;
+            document.getElementById("retorno").innerHTML +="<p>"+ respostaJSON.uf;
+            
+        } 
+    </script>
+    </div>
+</body>
+</html>

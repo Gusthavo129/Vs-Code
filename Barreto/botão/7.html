@@ -1,0 +1,45 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matriz 2x3 - Soma de Elementos</title>
+</head>
+<body>
+    <h1>Preencher Matriz 2x3</h1>
+    <p>Insira seis números separados por vírgulas:</p>
+    <input type="text" id="numeros" placeholder="Exemplo: 1,2,3,4,5,6"><br><br>
+    <button onclick="calcularSoma()">Calcular Soma</button>
+    <p id="resultado">Resultado: </p>
+
+    <script>
+        function calcularSoma() {
+            // Obtém os números inseridos pelo usuário e converte para um array
+            let numeros = document.getElementById('numeros').value.split(',').map(Number);
+
+            // Verifica se a quantidade de números é exatamente 6
+            if (numeros.length !== 6) {
+                document.getElementById('resultado').textContent = "Por favor, insira exatamente seis números.";
+                return;
+            }
+
+            // Cria a matriz 2x3 a partir do array de números
+            let matriz = [
+                [numeros[0], numeros[1], numeros[2]],
+                [numeros[3], numeros[4], numeros[5]]
+            ];
+
+            // Calcula a soma de todos os elementos da matriz
+            let soma = 0;
+            for (let i = 0; i < matriz.length; i++) {
+                for (let j = 0; j < matriz[i].length; j++) {
+                    soma += matriz[i][j];
+                }
+            }
+
+            // Exibe o resultado da soma
+            document.getElementById('resultado').textContent = `A soma de todos os elementos da matriz é: ${soma}`;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+import re
+
+def validacao(senha):
+    if not re.findall("[A-Z]", senha):
+        print("A senha deve conter uma letra maiúscula!")
+    elif not re.findall("[a-z]", senha):
+        print("A senha deve conter uma letra minúscula!")
+    elif not re.findall("[0-9]", senha):
+        print("A senha deve conter um número!")
+    elif not re.findall("[!@#$%&*,\.]", senha):
+        print("A senha deve ter um caractere especial (!@#$%&*.)")
+    elif len(senha) < 10:
+        print("A senha deve ter mais de 10 caracteres!")
+    elif re.search(r"(.)\1", senha):
+        print("Senha não pode repetir dois caracteres sequenciais")
+    else:
+        print("Senha válida")
+        
+senha = "Reberte205$"
+validacao(senha)
+
+
+  

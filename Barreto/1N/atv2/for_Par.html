@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        a = Number (prompt("Digite o primeiro numero",""))
+        b = Number (prompt("Digite um numero maior que o primeiro",""))
+
+        let par = "" ;
+        for(i =a; i <= b; i++ ){
+            if(i % 2 === 0){
+                par += i + " ";
+            }    
+        }
+        alert(`os pares entre ${a} e ${b} são: ${par.trim()} `)
+    </script>
+</body>
+</html>
